@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>611</width>
-    <height>517</height>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,7 +42,7 @@ color: white;</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>400</y>
+     <y>430</y>
      <width>491</width>
      <height>31</height>
     </rect>
@@ -51,14 +51,14 @@ color: white;</string>
     <string notr="true">background-color: white; color: black</string>
    </property>
    <property name="text">
-    <string>Salon Piictures</string>
+    <string>Salon Pictures</string>
    </property>
   </widget>
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>440</y>
+     <y>470</y>
      <width>491</width>
      <height>31</height>
     </rect>
@@ -115,9 +115,9 @@ color: white;</string>
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>96</y>
-     <width>231</width>
+     <x>240</x>
+     <y>340</y>
+     <width>311</width>
      <height>21</height>
     </rect>
    </property>
@@ -130,8 +130,8 @@ color: white;border:2px solid white</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>141</y>
-     <width>251</width>
+     <y>341</y>
+     <width>111</width>
      <height>20</height>
     </rect>
    </property>
@@ -144,14 +144,14 @@ color: white;border:2px solid white</string>
     </font>
    </property>
    <property name="text">
-    <string>Sessions:</string>
+    <string>Sessions by ID:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="registerButton">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>360</y>
+     <y>390</y>
      <width>491</width>
      <height>31</height>
     </rect>
@@ -167,10 +167,49 @@ color: white;border:2px solid white</string>
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>160</y>
+     <y>120</y>
      <width>491</width>
      <height>181</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #83230E;
+color: white;border:2px solid white</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>311</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Black</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Identity Card Number:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="tcLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>310</y>
+     <width>311</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #83230E;
+color: white;border:2px solid white</string>
    </property>
   </widget>
  </widget>

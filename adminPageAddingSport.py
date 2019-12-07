@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QTableWidgetItem
+from PyQt5.QtWidgets import QTableWidgetItem, QStyle
 import sqlite3
 
 dbase = sqlite3.connect('sportParkProject.db')
@@ -165,6 +165,7 @@ class Ui_Dialog(object):
         self.tableWidget = QtWidgets.QTableWidget(Dialog)
         self.tableWidget.setGeometry(QtCore.QRect(60, 150, 491, 181))
         self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setStyleSheet("color: black ; font-weight: bold")
         self.tableWidget.setColumnCount(3)
         self.tableWidget.setRowCount(3)
         self.deleteButton = QtWidgets.QPushButton(Dialog)
