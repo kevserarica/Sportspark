@@ -31,7 +31,7 @@ class Ui_Dialog(object):
     def checkInfos(self):
         tc = self.lineEdit.text().format(str)
         password = self.lineEdit_2.text().format(str)
-        result = dbase.execute(''' SELECT TC, password FROM Register WHERE tc = ? AND password = ?''', (tc,password))
+        result = dbase.execute(''' SELECT TC, password FROM Register WHERE TC = ? AND Password = ?''', (tc,password))
         if len(result.fetchall())>0 :
             self.window = QtWidgets.QWidget()
             self.ui = registerSportPage.Ui_Dialog()

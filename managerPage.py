@@ -8,6 +8,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QLineEdit
+
 import adminPageAddingSport
 
 class Ui_Dialog(object):
@@ -20,7 +22,12 @@ class Ui_Dialog(object):
             self.ui.setupUi(self.window)
             self.window.show()
         else:
-            print("Check your information")
+            msgBox = QtWidgets.QMessageBox()
+            msgBox.setIcon(QtWidgets.QMessageBox.Warning)
+            msgBox.setWindowTitle("Check Page")
+            msgBox.setText("Please check your information.")
+            msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            msgBox.exec_()
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 309)
@@ -35,9 +42,6 @@ class Ui_Dialog(object):
         font.setWeight(75)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
-        self.lineEdit_2 = QtWidgets.QLineEdit(Dialog)
-        self.lineEdit_2.setGeometry(QtCore.QRect(50, 150, 301, 21))
-        self.lineEdit_2.setObjectName("lineEdit_2")
         self.label_4 = QtWidgets.QLabel(Dialog)
         self.label_4.setGeometry(QtCore.QRect(50, 60, 81, 20))
         font = QtGui.QFont()
@@ -55,6 +59,10 @@ class Ui_Dialog(object):
         self.lineEdit = QtWidgets.QLineEdit(Dialog)
         self.lineEdit.setGeometry(QtCore.QRect(50, 80, 301, 21))
         self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(Dialog)
+        self.lineEdit_2.setGeometry(QtCore.QRect(50, 150, 301, 21))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_2.setEchoMode(QLineEdit.Password)
         self.closeButton = QtWidgets.QPushButton(Dialog)
         self.closeButton.setGeometry(QtCore.QRect(50, 245, 301, 31))
         self.closeButton.setStyleSheet("background-color: white; color: black")

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dba8e37f-20c7-434c-81e9-9188bf44d421" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminPageAddingSport.py" beforeDir="false" afterPath="$PROJECT_DIR$/adminPageAddingSport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logInPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/logInPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managerPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/managerPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registerSportPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/registerSportPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportParkProject.db" beforeDir="false" afterPath="$PROJECT_DIR$/sportParkProject.db" afterDir="false" />
     </list>
@@ -41,8 +42,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.registerSportPage">
-    <configuration name="CreatingDataBaseAndRecordingCodes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.checkYourSport">
+    <configuration name="checkYourSport" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SportParkiProjesi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -54,7 +55,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CreatingDataBaseAndRecordingCodes.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/checkYourSport.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -63,7 +64,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="SkateBoard" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="logInPage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SportParkiProjesi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,7 +76,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SkateBoard.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logInPage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -84,7 +85,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="adminPageAddingSport" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="managerPage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SportParkiProjesi" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,7 +97,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminPageAddingSport.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/managerPage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="registerPage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SportParkiProjesi" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/registerPage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,34 +148,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="salonPicturePage" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SportParkiProjesi" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/salonPicturePage.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.checkYourSport" />
+        <item itemvalue="Python.logInPage" />
         <item itemvalue="Python.registerSportPage" />
-        <item itemvalue="Python.adminPageAddingSport" />
-        <item itemvalue="Python.CreatingDataBaseAndRecordingCodes" />
-        <item itemvalue="Python.salonPicturePage" />
-        <item itemvalue="Python.SkateBoard" />
+        <item itemvalue="Python.registerPage" />
+        <item itemvalue="Python.managerPage" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575700604367</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="User can record new sport and stored in database">
+      <created>1575708621291</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575708621291</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,6 +209,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding delete function in adminPageAddingSport" />
     <MESSAGE value="end adminPageAddingSport Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="end adminPageAddingSport Page" />
+    <MESSAGE value="User can record new sport and stored in database" />
+    <option name="LAST_COMMIT_MESSAGE" value="User can record new sport and stored in database" />
   </component>
 </project>

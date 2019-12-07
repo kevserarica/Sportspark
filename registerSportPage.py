@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem
 import salonPicturePage
+import checkYourSport
 import sqlite3
 
 dbase = sqlite3.connect('sportParkProject.db')
@@ -43,7 +44,7 @@ class Ui_Dialog(object):
         msgBox = QtWidgets.QMessageBox()
         msgBox.setIcon(QtWidgets.QMessageBox.Information)
         msgBox.setWindowTitle("Successfully Added")
-        msgBox.setText("Thank you. Successfully Added.")
+        msgBox.setText("Thank you. Successfully Added. You can come your session in time. Details will send your email. Have a healty days.")
         msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
         msgBox.exec_()
 
@@ -60,7 +61,11 @@ class Ui_Dialog(object):
         self.ui = salonPicturePage.Ui_Dialog()
         self.ui.setupUi(self.window)
         self.window.show()
-
+    def lookMySportPage(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = checkYourSport.Ui_Dialog()
+        self.ui.setupUi(self.window)
+        self.window.show()
     def getInfosInComboBox(self):
         dbase = sqlite3.connect('sportParkProject.db')
         while self.tableWidget.rowCount() > 0:
@@ -76,7 +81,7 @@ class Ui_Dialog(object):
 
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(611, 517)
+        Dialog.resize(611, 565)
         Dialog.setStyleSheet("background-color: #83230E;\n""color: white;")
         self.label_6 = QtWidgets.QLabel(Dialog)
         self.label_6.setGeometry(QtCore.QRect(60, 60, 411, 31))
@@ -92,8 +97,13 @@ class Ui_Dialog(object):
         self.salonpictureButton.setStyleSheet("background-color: white; color: black")
         self.salonpictureButton.setObjectName("salonpictureButton")
         self.salonpictureButton.clicked.connect(self.goToSalonPictures)
+        self.lookmysportButton = QtWidgets.QPushButton(Dialog)
+        self.lookmysportButton.setGeometry(QtCore.QRect(60, 470, 491, 31))
+        self.lookmysportButton.setStyleSheet("background-color: white; color: black")
+        self.lookmysportButton.setObjectName("lookmysportButton")
+        self.lookmysportButton.clicked.connect(self.lookMySportPage)
         self.closeButton = QtWidgets.QPushButton(Dialog)
-        self.closeButton.setGeometry(QtCore.QRect(60, 470, 491, 31))
+        self.closeButton.setGeometry(QtCore.QRect(60, 510, 491, 31))
         self.closeButton.setStyleSheet("background-color: white; color: black")
         self.closeButton.setObjectName("closeButton")
         self.closeButton.clicked.connect(Dialog.close)
@@ -166,6 +176,7 @@ class Ui_Dialog(object):
         self.label_6.setText(_translate("Dialog", "Welcome. You can register a new sport to be healtyh."))
         self.salonpictureButton.setText(_translate("Dialog", "Salon Pictures"))
         self.closeButton.setText(_translate("Dialog", "Close"))
+        self.lookmysportButton.setText(_translate("Dialog", "Look at my register sport"))
         self.label_5.setText(_translate("Dialog", "Register Sport"))
         self.label_7.setText(_translate("Dialog", "Which sport you want to register:"))
         self.label_8.setText(_translate("Dialog", "Sessions by ID:"))
