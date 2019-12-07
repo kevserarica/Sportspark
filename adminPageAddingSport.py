@@ -35,7 +35,7 @@ class Ui_Dialog(object):
         dbase = sqlite3.connect('sportParkProject.db')
         while self.tableWidget.rowCount() > 0:
             self.tableWidget.removeRow(0)
-        query = 'SELECT * FROM Sports'
+        query = 'SELECT sportName,session,forGender FROM Sports'
         res = dbase.execute(query)
         for row_index, row_data in enumerate(res):
             self.tableWidget.insertRow(row_index)
@@ -43,6 +43,31 @@ class Ui_Dialog(object):
                 self.tableWidget.setItem(row_index, colm_index, QTableWidgetItem(str(colm_data)))
         dbase.close()
         return
+    def delete(self):
+        dbase = sqlite3.connect('sportParkProject.db')
+        cursor = dbase.cursor()
+        query = 'SELECT * FROM Sports'
+        alldata = dbase.execute(query)
+        for row in enumerate(alldata):
+            if row[0] == self.tableWidget.currentRow():
+                data = row[1]
+                sportID = data[0]
+                SportName = data[1]
+                session = data[2]
+                forGender = data[3]
+                cursor.execute(
+                    ''' DELETE FROM Sports WHERE sportID = ? AND SportName = ? AND session = ? AND forGender = ?''',
+                    (sportID, SportName, session, forGender))
+                dbase.commit()
+                self.deletedMessage()
+                self.load()
+    def deletedMessage(self):
+        msgBox = QtWidgets.QMessageBox()
+        msgBox.setIcon(QtWidgets.QMessageBox.Information)
+        msgBox.setWindowTitle("Deleted Info")
+        msgBox.setText("Successfully Deleted.")
+        msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
+        msgBox.exec_()
 
     def giveSuccess(self):
         msgBox = QtWidgets.QMessageBox()
@@ -78,7 +103,7 @@ class Ui_Dialog(object):
         self.addButton.setGeometry(QtCore.QRect(60, 390, 251, 31))
         self.addButton.setStyleSheet("background-color: white; color: black")
         self.addButton.setObjectName("addButton")
-        self.addButton.clicked.connect(self.addSport)
+        self.addButton.clicked.connect(self.load)
         self.closeButton = QtWidgets.QPushButton(Dialog)
         self.closeButton.setGeometry(QtCore.QRect(60, 430, 491, 31))
         self.closeButton.setStyleSheet("background-color: white; color: black")
@@ -140,34 +165,36 @@ class Ui_Dialog(object):
         self.tableWidget = QtWidgets.QTableWidget(Dialog)
         self.tableWidget.setGeometry(QtCore.QRect(60, 150, 491, 181))
         self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(4)
-        self.tableWidget.setRowCount(4)
+        self.tableWidget.setColumnCount(3)
+        self.tableWidget.setRowCount(3)
         self.deleteButton = QtWidgets.QPushButton(Dialog)
         self.deleteButton.setGeometry(QtCore.QRect(320, 390, 231, 31))
         self.deleteButton.setStyleSheet("background-color: white; color: black")
         self.deleteButton.setObjectName("deleteButton")
+        self.deleteButton.clicked.connect(self.delete)
         self.refreshButton = QtWidgets.QPushButton(Dialog)
         self.refreshButton.setGeometry(QtCore.QRect(60, 350, 491, 31))
         self.refreshButton.setStyleSheet("background-color: white; color: black")
         self.refreshButton.setObjectName("refreshButton")
-        self.refreshButton.clicked.connect(self.load)
+        self.refreshButton.clicked.connect(self.addSport)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.load()
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_5.setText(
             _translate("Dialog", "<html><head/><body><p align=\"center\">Admin Page</p></body></html>"))
-        self.addButton.setText(_translate("Dialog", "Add Sport"))
+        self.addButton.setText(_translate("Dialog", "Refresh"))
         self.closeButton.setText(_translate("Dialog", "Close"))
         self.label_6.setText(_translate("Dialog", "Welcome Sir. You can add or delete sports in this page"))
         self.label_4.setText(_translate("Dialog", "Sport Name"))
         self.label_7.setText(_translate("Dialog", "Sport Time"))
         self.label_8.setText(_translate("Dialog", "Which Gender"))
         self.deleteButton.setText(_translate("Dialog", "Delete Sport"))
-        self.refreshButton.setText(_translate("Dialog", "Refresh"))
+        self.refreshButton.setText(_translate("Dialog", "Add"))
 
 
 if __name__ == "__main__":
