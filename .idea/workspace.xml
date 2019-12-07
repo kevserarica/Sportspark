@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dba8e37f-20c7-434c-81e9-9188bf44d421" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logInPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/logInPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managerPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/managerPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registerSportPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/registerSportPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportParkProject.db" beforeDir="false" afterPath="$PROJECT_DIR$/sportParkProject.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +39,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.checkYourSport">
+  <component name="RunManager" selected="Python.logInPage">
     <configuration name="checkYourSport" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SportParkiProjesi" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,8 +147,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.checkYourSport" />
         <item itemvalue="Python.logInPage" />
+        <item itemvalue="Python.checkYourSport" />
         <item itemvalue="Python.registerSportPage" />
         <item itemvalue="Python.registerPage" />
         <item itemvalue="Python.managerPage" />
@@ -190,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575708621291</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added checkYourSport Page, user can see which sport he is doing">
+      <created>1575715292169</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575715292169</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,6 +214,7 @@
     <MESSAGE value="adding delete function in adminPageAddingSport" />
     <MESSAGE value="end adminPageAddingSport Page" />
     <MESSAGE value="User can record new sport and stored in database" />
-    <option name="LAST_COMMIT_MESSAGE" value="User can record new sport and stored in database" />
+    <MESSAGE value="Added checkYourSport Page, user can see which sport he is doing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checkYourSport Page, user can see which sport he is doing" />
   </component>
 </project>
