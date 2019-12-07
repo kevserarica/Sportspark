@@ -43,6 +43,7 @@ class Ui_Dialog(object):
                 self.tableWidget.setItem(row_index, colm_index, QTableWidgetItem(str(colm_data)))
         dbase.close()
         return
+
     def delete(self):
         dbase = sqlite3.connect('sportParkProject.db')
         cursor = dbase.cursor()

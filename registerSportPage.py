@@ -8,34 +8,29 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem
-
+import salonPicturePage
 import sqlite3
 
 dbase = sqlite3.connect('sportParkProject.db')
 class Ui_Dialog(object):
-    def addSport(self):
-        sportName = self.lineEdit.text().format(str)
-        sportTime = self.lineEdit_2.text().format(str)
-        gender = self.lineEdit_3.text().format(str)
-        if len(sportName) > 0 and len(sportTime) > 0 and len(gender) > 0:
-            self.addInfos(sportName, sportTime, gender)
+    def register(self):
+        tc = self.tcLineEdit.text().format(str)
+        registeredSport = self.comboBox.currentText().format(str)
+        dbase = sqlite3.connect('sportParkProject.db')
+        if len(tc) > 0 and len(registeredSport) > 0 :
+            dbase.execute('''UPDATE Register SET registeredSport = ? WHERE TC = ?'''
+                          ,(registeredSport, tc))
+            dbase.commit()
+            dbase.close()
             self.giveSuccess()
-            self.load()
         else:
             self.giveError()
-
-    def addInfos(self, name, session, gender):
-        dbase = sqlite3.connect('sportParkProject.db')
-        dbase.execute('''INSERT INTO Sports(sportName,session,forGender) VALUES(?,?,?)''',
-                      (name, session, gender))
-        dbase.commit()  # To Applying the Changes
-        dbase.close()
 
     def load(self):
         dbase = sqlite3.connect('sportParkProject.db')
         while self.tableWidget.rowCount() > 0:
             self.tableWidget.removeRow(0)
-        query = 'SELECT sportName,session,forGender FROM Sports'
+        query = 'SELECT * FROM Sports'
         res = dbase.execute(query)
         for row_index, row_data in enumerate(res):
             self.tableWidget.insertRow(row_index)
@@ -60,11 +55,29 @@ class Ui_Dialog(object):
         msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
         msgBox.exec_()
 
+    def goToSalonPictures(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = salonPicturePage.Ui_Dialog()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def getInfosInComboBox(self):
+        dbase = sqlite3.connect('sportParkProject.db')
+        while self.tableWidget.rowCount() > 0:
+            self.tableWidget.removeRow(0)
+        query = 'SELECT sportID FROM Sports'
+        res = dbase.execute(query)
+        for row_index, row_data in enumerate(res):
+            self.tableWidget.insertRow(row_index)
+            for colm_index, colm_data in enumerate(row_data):
+                self.comboBox.addItem(str(colm_data))
+        res = dbase.execute(query)
+        dbase.close()
+
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(611, 517)
-        Dialog.setStyleSheet("background-color: #83230E;\n"
-"color: white;")
+        Dialog.setStyleSheet("background-color: #83230E;\n""color: white;")
         self.label_6 = QtWidgets.QLabel(Dialog)
         self.label_6.setGeometry(QtCore.QRect(60, 60, 411, 31))
         font = QtGui.QFont()
@@ -78,6 +91,7 @@ class Ui_Dialog(object):
         self.salonpictureButton.setGeometry(QtCore.QRect(60, 430, 491, 31))
         self.salonpictureButton.setStyleSheet("background-color: white; color: black")
         self.salonpictureButton.setObjectName("salonpictureButton")
+        self.salonpictureButton.clicked.connect(self.goToSalonPictures)
         self.closeButton = QtWidgets.QPushButton(Dialog)
         self.closeButton.setGeometry(QtCore.QRect(60, 470, 491, 31))
         self.closeButton.setStyleSheet("background-color: white; color: black")
@@ -119,11 +133,13 @@ class Ui_Dialog(object):
         self.registerButton.setGeometry(QtCore.QRect(60, 390, 491, 31))
         self.registerButton.setStyleSheet("background-color: white; color: black")
         self.registerButton.setObjectName("registerButton")
+        self.registerButton.clicked.connect(self.register)
         self.tableWidget = QtWidgets.QTableWidget(Dialog)
         self.tableWidget.setGeometry(QtCore.QRect(60, 120, 491, 181))
         self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(0)
+        self.tableWidget.setColumnCount(4)
+        self.tableWidget.setRowCount(4)
+        self.tableWidget.setStyleSheet("color: black ; font-weight: bold")
         self.label_9 = QtWidgets.QLabel(Dialog)
         self.label_9.setGeometry(QtCore.QRect(60, 311, 161, 20))
         font = QtGui.QFont()
@@ -141,6 +157,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.getInfosInComboBox()
         self.load()
 
     def retranslateUi(self, Dialog):
