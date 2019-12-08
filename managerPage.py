@@ -14,9 +14,9 @@ import adminPageAddingSport
 
 class Ui_Dialog(object):
     def checkUserNameAndPassword(self):
-        username = self.lineEdit.text().format(str)
-        password = self.lineEdit_2.text().format(str)
-        if (username == "alibaba" and password == "123321"):
+        username = self.lineEdit.text().format(str).lower()
+        password = self.lineEdit_2.text().format(str).lower()
+        if (username== "canberk" and password == "senlik"):
             self.window = QtWidgets.QWidget()
             self.ui = adminPageAddingSport.Ui_Dialog()
             self.ui.setupUi(self.window)

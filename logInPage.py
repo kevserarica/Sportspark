@@ -102,7 +102,7 @@ class Ui_Dialog(object):
         self.loginButton.setObjectName("loginButton")
         self.loginButton.clicked.connect(self.checkInfos)
         self.label_5 = QtWidgets.QLabel(Dialog)
-        self.label_5.setGeometry(QtCore.QRect(180, 10, 181, 31))
+        self.label_5.setGeometry(QtCore.QRect(155, 10, 181, 31))
         font = QtGui.QFont()
         font.setFamily("Arial Black")
         font.setPointSize(10)
@@ -123,7 +123,7 @@ class Ui_Dialog(object):
         self.registerButton.setText(_translate("Dialog", "Register"))
         self.aboutUsbutton.setText(_translate("Dialog", "About Us"))
         self.loginButton.setText(_translate("Dialog", "Login"))
-        self.label_5.setText(_translate("Dialog", "Sport Center"))
+        self.label_5.setText(_translate("Dialog", "Senlik Sport Center"))
 
 
 if __name__ == "__main__":

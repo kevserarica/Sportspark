@@ -31,8 +31,6 @@ class Ui_Dialog(object):
                             jumpCounter = 10
                         if jumpCounter > 0:
                             self.tableWidget.setItem(0, colm_index-1, QTableWidgetItem(str(colm_data)))
-                            print("C: ", jumpCounter, " Colum_index: ", colm_index, " Column_data: ", colm_data,
-                                  " Row_index: ", row_index)
                             jumpCounter = jumpCounter - 1
 
             dbase.close()
